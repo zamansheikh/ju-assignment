@@ -71,12 +71,12 @@ export const pageSizeLabels: Record<PageSize, string> = {
   legal: "Legal",
 };
 
-// Exact page dimensions in mm
+// Page dimensions in mm (string for CSS, number for jsPDF)
 export const pageDimensions: Record<
   PageSize,
-  { width: string; height: string }
+  { width: string; height: string; w: number; h: number }
 > = {
-  a4: { width: "210mm", height: "297mm" },
-  letter: { width: "215.9mm", height: "279.4mm" },
-  legal: { width: "215.9mm", height: "355.6mm" },
+  a4: { width: "210mm", height: "297mm", w: 210, h: 297 },
+  letter: { width: "215.9mm", height: "279.4mm", w: 215.9, h: 279.4 },
+  legal: { width: "215.9mm", height: "355.6mm", w: 215.9, h: 355.6 },
 };
