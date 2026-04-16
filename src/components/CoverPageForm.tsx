@@ -38,12 +38,12 @@ export default function CoverPageForm({
     <div className="space-y-5">
       {/* Template Type */}
       <Section title="Template">
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-4 gap-1.5">
           {(Object.keys(templateLabels) as TemplateType[]).map((type) => (
             <button
               key={type}
               onClick={() => update("templateType", type)}
-              className={`${btnBase} ${data.templateType === type ? btnActive : btnInactive}`}
+              className={`${btnBase} text-xs px-1 h-9 flex items-center justify-center ${data.templateType === type ? btnActive : btnInactive}`}
             >
               {templateLabels[type]}
             </button>

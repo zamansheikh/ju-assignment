@@ -1,4 +1,12 @@
-export type TemplateType = "assignment" | "lab-report" | "project" | "quiz" | "presentation";
+export type TemplateType =
+  | "assignment"
+  | "lab-report"
+  | "project"
+  | "quiz"
+  | "presentation"
+  | "elegant"
+  | "minimal"
+  | "academic";
 export type PageSize = "a4" | "letter" | "legal";
 
 export interface CoverPageData {
@@ -52,6 +60,9 @@ export const templateLabels: Record<TemplateType, string> = {
   project: "Project",
   quiz: "Quiz",
   presentation: "Presentation",
+  elegant: "Elegant",
+  minimal: "Minimal",
+  academic: "Academic",
 };
 
 export const pageSizeLabels: Record<PageSize, string> = {
@@ -61,7 +72,10 @@ export const pageSizeLabels: Record<PageSize, string> = {
 };
 
 // Exact page dimensions in mm
-export const pageDimensions: Record<PageSize, { width: string; height: string }> = {
+export const pageDimensions: Record<
+  PageSize,
+  { width: string; height: string }
+> = {
   a4: { width: "210mm", height: "297mm" },
   letter: { width: "215.9mm", height: "279.4mm" },
   legal: { width: "215.9mm", height: "355.6mm" },

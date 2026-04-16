@@ -6,6 +6,9 @@ import LabReportTemplate from "./templates/LabReportTemplate";
 import ProjectTemplate from "./templates/ProjectTemplate";
 import QuizTemplate from "./templates/QuizTemplate";
 import PresentationTemplate from "./templates/PresentationTemplate";
+import ElegantTemplate from "./templates/ElegantTemplate";
+import MinimalTemplate from "./templates/MinimalTemplate";
+import AcademicTemplate from "./templates/AcademicTemplate";
 import { forwardRef } from "react";
 
 const CoverPagePreview = forwardRef<HTMLDivElement, { data: CoverPageData }>(
@@ -20,6 +23,12 @@ const CoverPagePreview = forwardRef<HTMLDivElement, { data: CoverPageData }>(
           return <QuizTemplate data={data} />;
         case "presentation":
           return <PresentationTemplate data={data} />;
+        case "elegant":
+          return <ElegantTemplate data={data} />;
+        case "minimal":
+          return <MinimalTemplate data={data} />;
+        case "academic":
+          return <AcademicTemplate data={data} />;
         default:
           return <AssignmentTemplate data={data} />;
       }
