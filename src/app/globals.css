@@ -3,7 +3,6 @@
 :root {
   --background: #f1f5f9;
   --foreground: #171717;
-  --header-h: 3.25rem;
 }
 
 @theme inline {
@@ -42,10 +41,32 @@ body {
     background: white !important;
     margin: 0 !important;
     padding: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
   }
 
+  /* Hide everything except the cover page */
   .no-print {
     display: none !important;
+  }
+
+  /* Reset the app shell so it doesn't constrain the page */
+  .app-shell,
+  .main-content,
+  .preview-panel {
+    display: block !important;
+    position: static !important;
+    overflow: visible !important;
+    height: auto !important;
+    width: auto !important;
+    flex: none !important;
+    background: none !important;
+  }
+
+  /* Reset the scaled preview wrapper */
+  .preview-scaler {
+    transform: none !important;
+    position: static !important;
   }
 
   .cover-page {

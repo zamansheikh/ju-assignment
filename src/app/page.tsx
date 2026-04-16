@@ -152,7 +152,7 @@ export default function Home() {
     "h-9 px-3.5 rounded-lg text-xs font-semibold cursor-pointer border transition-all flex items-center gap-2 disabled:opacity-40";
 
   return (
-    <div className="h-dvh flex flex-col overflow-hidden">
+    <div className="app-shell h-dvh flex flex-col overflow-hidden">
       {/* ════════ HEADER ════════ */}
       <header className="no-print bg-white border-b border-gray-200 shrink-0 z-50">
         <div className="px-3 lg:px-5 h-12 flex items-center justify-between gap-3">
@@ -261,7 +261,7 @@ export default function Home() {
       </div>
 
       {/* ════════ MAIN CONTENT ════════ */}
-      <div className="flex-1 flex flex-col lg:flex-row min-h-0 overflow-hidden">
+      <div className="main-content flex-1 flex flex-col lg:flex-row min-h-0 overflow-hidden">
         {/* ── Form Panel ── */}
         <div
           className={`no-print w-full lg:w-[430px] xl:w-[470px] shrink-0 lg:border-r border-gray-200 bg-white overflow-y-auto thin-scroll ${
@@ -296,7 +296,7 @@ export default function Home() {
         {/* ── Preview Panel ── */}
         <div
           ref={previewContainerRef}
-          className={`flex-1 min-h-0 flex items-center justify-center overflow-hidden ${
+          className={`preview-panel flex-1 min-h-0 flex items-center justify-center overflow-hidden ${
             mobileTab === "preview" ? "block" : "hidden lg:flex"
           }`}
           style={{
@@ -313,7 +313,7 @@ export default function Home() {
                 // noop — printRef is set via CoverPagePreview
               }
             }}
-            className="origin-center"
+            className="preview-scaler origin-center"
             style={{ transform: "scale(0.5)" }}
           >
             <CoverPagePreview ref={printRef} data={data} />
